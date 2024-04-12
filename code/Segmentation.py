@@ -36,7 +36,7 @@ class Segmentation:
         return result if result is not None else self.gray_images
 
     def binarize(self, gray_images):
-        binarized = gray_images
+        binarized = gray_images.copy()
 
         for i in range(len(binarized)):
             binarized[i][(binarized[i] < self.low_hue) |
@@ -63,7 +63,7 @@ class Segmentation:
         images = dict()
 
         for i in range(len(paths)):
-            images[i] = np.array(Image.open(self.paths[i]))
+            images[i] = np.array(Image.open(paths[i]))
 
         return images
 
