@@ -31,7 +31,7 @@ class Segmentation:
 
         if borders:
             result = self.get_borders(
-                result) if result is not None else self.get_borders1(self.gray_images)
+                result) if result is not None else self.get_borders(self.gray_images)
 
         return result if result is not None else self.gray_images
 
